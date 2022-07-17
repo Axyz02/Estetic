@@ -33,7 +33,7 @@ const Button = styled.button`
 `;
 
 function App() {
-  const promo = {"name":'test1',"desc":'Testeando bbad modified_1',"uid":`${uid(6)}`,"used": 0};
+  const promo = {"name":'test1',"desc":'Descuento regina QR_1',"uid":`${uid(6)}`,"used": 0};
   const [phrase, setPhrase] = useState({});
   const getPhrase = async () => {
     setPhrase(promo);
@@ -47,7 +47,7 @@ function App() {
       <Container>
         <Phrase phrase={phrase} />
         <Button onClick={async () => {
-          axios.post('http://localhost:3000/promo',promo)
+          axios.post('https://regina-estetica.herokuapp.com/promo',promo)
           .then(response => console.log(response))
           .catch(error => console.log(error)) 
         }}>Obtener</Button>
